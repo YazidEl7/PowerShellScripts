@@ -11,7 +11,7 @@ $File = $Lien
 $FileContent = Get-Content $File
 $FileContent.Remove(0,14) > $File
 $FileContent = Get-Content $File
-#The next code will take the inventory number from the db1.csv, that exists too on the current location,
+#The next code will take the inventory number from the db1.csv (that exists too on the current location)
 #that matches the serial number 
 #and store it in a file in the current location
 $Lien2=".\db1.csv"
@@ -23,14 +23,17 @@ ForEach ($record in $records)
 if ( $Record.SERIAL -eq $SerNum ) {Break} 
 $Record.INVENTORY > $Lien3
 }
-#the next to lines gonna copy the other domainjoin script to c:\
-$Lien4 =".\domainjoin.ps1"
-Copy-Item -Path $Lien4 -Destination C:\
+#the next two lines gonna copy the other domainjoin script to c:\ . Disabled it since its not necessary anymore
+#$Lien4 =".\domainjoin.ps1"
+#Copy-Item -Path $Lien4 -Destination C:\
 #Renaming PC to the corresponding Inventory value of its serial number
 $Hostname = Get-Content $Lien3
+##########I had to change execution policy so that the domain join .ps1 get launched after restart#########
+Set-ExecutionPolicy Unrestricted -Force
+######################################################
 Rename-Computer $Hostname
 #running the earlier copied domainjoin script after computer restart
 Set-Location -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
-Set-ItemProperty -Path . -Name joinDomain -Value 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe "C:\domainjoin.ps1"'
+Set-ItemProperty -Path . -Name joinDomain -Value 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe "C:\Domainjoin\domainjoin.ps1"'
 
 Restart-Computer
