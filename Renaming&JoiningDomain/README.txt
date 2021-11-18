@@ -6,5 +6,5 @@
 #At the end the vendor sends us a file containing two columns (Inventory and Serial)
 #So that we rename the pc later with its inventory number and we join it to a domain
 ###########################################################################
-# Launch This.ps1 and it'll take care of everything.
+# Launch run_launcher .bat and it'll take care of everything.
 # Make sure to change domain stuff and credentials in the domainjoin .ps1
