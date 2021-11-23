@@ -5,3 +5,5 @@
 	While any other local account created by the user on the computer before joining the pc to the domain, 
 	will get removed
 /************************************************************************************************************/
+	Most of the PCs that have joined our domain will have the execution policy for scripts, set as restricted
+	So you might have to conider modifying it in a GPO or make a Batch file that'll launch it for you
