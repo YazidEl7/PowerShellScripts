@@ -1,4 +1,4 @@
-/***************Still Ongoing, Not perfect*****************************/
+/***************Meant for PCs that haven't joined the domain yet*****************************/
 #When we buy PCs we like to identify it by our own serial numbers generated from our inventory system 
 #not the serial that the vendor alread assigns to the hardware
 #we send to a vendor our own serials
