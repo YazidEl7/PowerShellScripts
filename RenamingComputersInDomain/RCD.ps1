@@ -30,6 +30,7 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
     }
     # If not 
     if ($Check -eq 0) {
+        Remove-Item -LiteralPath "C:\base1.csv"
         Rename-computer –computername $ComputerName –newname $NewName -DomainCredential $Credential –force –restart  
     }
 }
@@ -50,6 +51,7 @@ if ($HardwareType -ilike "Laptop") {
     }
     # If not 
     if ($Check = 0) {
+        Remove-Item -LiteralPath "C:\base2.csv"
         Rename-computer –computername $ComputerName –newname $NewName -DomainCredential $Credential –force –restart  
     }
 }
