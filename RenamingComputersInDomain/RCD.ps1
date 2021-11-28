@@ -19,7 +19,8 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
     
     # the inventory csv file has two headers INVENTORY and SERIAL
     # Copy the Desktop Inventory csv from the server to the local machine where this script gonna be executed
-    $Base = Copy-Item -Path "***\base1.csv" -Destination "C:\Domainjoin" -Recurse 
+    Copy-Item -Path "***\base1.csv" -Destination "C:\" 
+    $Base = "C:\base1.csv"
     $InvBase = Import-Csv $Base -Delimiter ";"
 
     # Checking if it already been renamed after its own serial number's correspondant inventory value
@@ -37,8 +38,9 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
 if ($HardwareType -ilike "Laptop") {
     
     # the inventory csv file has two headers INVENTORY and SERIAL
-    # Copy the Desktop Inventory csv from the server to the local machine where this script gonna be executed
-    $Base = Copy-Item -Path "***\base2.csv" -Destination "C:\Domainjoin" -Recurse 
+    # Copy the Laptop Inventory csv from the server to the local machine where this script gonna be executed
+    Copy-Item -Path "***\base2.csv" -Destination "C:\" 
+    $Base = "C:\base2.csv"
     $InvBase = Import-Csv $Base -Delimiter ";"
 
     # Checking if it already been renamed after its own serial number's correspondant inventory value
