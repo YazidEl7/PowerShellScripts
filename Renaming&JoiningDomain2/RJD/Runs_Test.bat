@@ -1,0 +1,2 @@
+::Making sure policy is bypassed and executing the script through its full path
+PowerShell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList 'C:\RJD\Connection_Test.ps1' -Verb RunAs}"
