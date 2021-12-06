@@ -12,13 +12,14 @@ param(
 Set-ExecutionPolicy Unrestricted -Force
 
 # copying the current folder to sys drive where will it be for execution, using the earlier used current location env var %cd% 
-Copy-Item -Path $Param1 -Destination "C:\Domainjoin" -Recurse
+$Dest = ($env:SystemDrive) + "\Domainjoin"
+Copy-Item -Path $Param1 -Destination $Dest -Recurse -Force
 # making the directory hidden
-attrib +h "C:\Domainjoin"
+attrib +h $Dest
 
+$FP = ($env:SystemDrive) + "\main.ps1"
 # Running the main script as Admin
-start-process powershell -ArgumentList '-noprofile -file C:\Domainjoin\main.ps1' -verb RunAs 
+start-process powershell -ArgumentList '-noprofile -file $FP' -verb RunAs 
 
 # Draft
 #Start-Process -FilePath C:\Domainjoin\Runs_main.bat -Verb Runas
-
