@@ -17,9 +17,9 @@ $Dest   = $D + "\RJD\"
 attrib +h $Dest
 
 $Source = "\\192.168.10.254\partage\db1.csv"
-$Username = "DOM\Sharetest"
-$Password = ConvertTo-SecureString "Pass1234" -AsPlainText -Force
-$mycreds = New-Object System.Management.Automation.PSCredential($Username, $Password)
+$Username = (Powershell -E IgBEAE8ATwBNAEEASQBOAFwAQQBEAE0ASQBOADIAIgA=)
+$Password= (Powershell -E IgBQAGEAcwB3AHcAbwByAGQAMQAyADMAIgA=)
+$mycreds = New-Object -TypeName System.Management.Automation.PSCredential.($Username, ConvertTo-SecureString -String $Password -AsPlainText -Force)
 New-PSDrive -Name J -PSProvider FileSystem -Root $Source -Credential $mycreds -Persist
 Copy-Item -Path $Source -Destination $Dest
 Start-Sleep -Seconds 5
