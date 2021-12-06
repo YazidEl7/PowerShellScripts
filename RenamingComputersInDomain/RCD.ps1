@@ -17,11 +17,10 @@ $Credential = New-Object -TypeName System.Management.Automation.PSCredential.($U
 ##################### For Desktops #####################################################################
 if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
     
-    # the inventory csv file has two headers INVENTORY and SERIAL
-    # Copy the Desktop Inventory csv from the server to the local machine where this script gonna be executed
-    Copy-Item -Path "***\base1.csv" -Destination "C:\" 
-    $Base = "C:\base1.csv"
-    $InvBase = Import-Csv $Base -Delimiter ";"
+    # Copying the CSV located in the server to a local path
+    $D1 = ($env:SystemDrive) + "\Base1.csv" 
+    Copy-Item -Path "****" -Destination $D   # CSV file needed with two headers, INVENTORY and SERIAL, also with Full path 
+    $InvBase = Import-Csv "C:\Base1.csv" -Delimiter ";"    
 
     # Checking if it already been renamed after its own serial number's correspondant inventory value
     ForEach ($InvName in $InvBase) {
@@ -30,7 +29,6 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
     }
     # If not 
     if ($Check -eq 0) {
-        Remove-Item -LiteralPath "C:\base1.csv"
         Rename-computer –computername $ComputerName –newname $NewName -DomainCredential $Credential –force –restart  
     }
 }
@@ -38,11 +36,10 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
 ##################### For Laptops  #####################################################################
 if ($HardwareType -ilike "Laptop") {
     
-    # the inventory csv file has two headers INVENTORY and SERIAL
-    # Copy the Laptop Inventory csv from the server to the local machine where this script gonna be executed
-    Copy-Item -Path "***\base2.csv" -Destination "C:\" 
-    $Base = "C:\base2.csv"
-    $InvBase = Import-Csv $Base -Delimiter ";"
+    # Copying the CSV located in the server to a local path
+    $D2 = ($env:SystemDrive) + "\Base2.csv" 
+    Copy-Item -Path "****" -Destination $D2   # CSV file needed with two headers, INVENTORY and SERIAL, also with Full path
+    $InvBase = Import-Csv "C:\Base2.csv" -Delimiter ";"    
 
     # Checking if it already been renamed after its own serial number's correspondant inventory value
     ForEach ($InvName in $InvBase) {
@@ -51,7 +48,6 @@ if ($HardwareType -ilike "Laptop") {
     }
     # If not 
     if ($Check = 0) {
-        Remove-Item -LiteralPath "C:\base2.csv"
         Rename-computer –computername $ComputerName –newname $NewName -DomainCredential $Credential –force –restart  
     }
 }
