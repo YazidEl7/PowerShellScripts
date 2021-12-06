@@ -6,3 +6,5 @@ Also we should already have executed the run .ps1 on the image before delivering
 we'll have to have the db1.csv on a cenralized shared folder or ftp server.
 the run.ps1 puts the run_test .bat in HKLM run so that it'll run everytime on startup and it keeps waiting for 
 local network connection then it proceeds to downloading db1.csv and renaming the pc plus joining it to the domain
+# Requirements : Domainjoin folder containing all the above files, put your domain credentials and domain also the ip and credentials 
+for the shared folder conata  ining the db1.csv
