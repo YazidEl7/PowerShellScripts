@@ -15,7 +15,7 @@ $SerNum = (Get-ComputerInfo).BiosSeralNumber
 #that matches the serial number 
 #and store it in a file in the current location
 
-$Lien2="C:\RJD\db1.csv"
+$Lien2=($env:SystemDrive) + "\RJD\db1.csv"
 $Inventory = ""
 
 $Records = Import-Csv $Lien2 -Delimiter ";"
@@ -30,11 +30,20 @@ Break}
 }
 ##############################################################################
 #running the earlier copied domainjoin script after computer restart
+$S = $Env:Systemroot
+$D = $Env:Systemdrive
+$Command = $S + "\System32\WindowsPowerShell\v1.0\powershell.exe " + $D + "\Domainjoin\domainjoin.ps1"
 
 Set-Location -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
-Set-ItemProperty -Path . -Name joinDomain -Value 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe "C:\RJD\domainjoin.ps1"'
+Set-ItemProperty -Path . -Name joinDomain -Value $Command
+
+#Set-Location -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
+#Set-ItemProperty -Path . -Name joinDomain -Value 'C:\windows\system32\CMD.exe "C:\RJD\Runs_Domain.bat"'
 # Remove startup file
 #Set-ItemProperty -Path . -Name SBRemoval -Value 'Remove-Item -LiteralPath "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\Runs_Test.bat" -Force'
-
+#Set-Location -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
+#Set-ItemProperty -Path . -Name joinDomain -Value 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe ("cmd.exe /c "C:\RJD\Runs_Domain.bat"")'
 Restart-Computer -Force
+
+
 
