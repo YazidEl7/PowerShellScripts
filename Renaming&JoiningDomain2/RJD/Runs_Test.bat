@@ -1,2 +1,5 @@
 ::Making sure policy is bypassed and executing the script through its full path
-PowerShell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList 'C:\RJD\Connection_Test.ps1' -Verb RunAs}"
+set "var=%SYSTEMDRIVE%"
+set "var2=\RJD\Connection_Test.ps1"
+set "S=%var%%var2%"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-noprofile -file %S%' -verb runas'}"
