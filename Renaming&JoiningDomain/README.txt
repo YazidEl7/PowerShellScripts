@@ -9,4 +9,4 @@ that got already its own serial number from the manufacturer
 ###########################################################################
 # Launch run_launcher .bat and it'll take care of everything.
 # Make sure to change domain stuff and credentials in the domainjoin .ps1
-# Requirements : Domainjoin folder containing all the above files
+# Requirements : Domainjoin folder containing all the above files, put your domain credentials and domain
