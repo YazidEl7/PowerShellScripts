@@ -17,8 +17,6 @@ $Dest   = $D + "\RJD\"
 attrib +h $Dest
 
 $Source = "\\192.168.10.254\partage\db1.csv"
-
-
 $Username = "DOM\Sharetest"
 $Password = ConvertTo-SecureString "Pass1234" -AsPlainText -Force
 $mycreds = New-Object System.Management.Automation.PSCredential($Username, $Password)
