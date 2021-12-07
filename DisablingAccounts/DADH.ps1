@@ -1,6 +1,7 @@
 ﻿Import-Module ActiveDirectory
 $CurrentDate0 = Get-Date -Format "dd-MM-yyyy"
 $Fin0 = [DateTime]::Now.Subtract([TimeSpan]::FromDays(1)) | get-date -format "dd-MM-yyyy"
+# will change later the csv path to take systemdrive letter
 $P0 = "./" + $Fin0 + ".csv"
 $ADUsers = Import-csv $P0 -Delimiter ","
 $newcsv = @()
