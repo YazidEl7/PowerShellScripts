@@ -6,3 +6,5 @@ after the first execution it'll create a csv file with the current date containi
 that are still disabled, so that it'll check it the day after (for optimization reasons so it won't parse through old data, 
 like ppl that got their accounts enabled after their return, while they shouldn't exist in that file anymore)
 In case HR provided new csv for new entries, you must append it to that day's csv file to be executed the day after. 
+The success of this script depends on paying attention to the date's format cuz of diffrences between french anch English
+# The Csv file is just an example of employees with the start and end dates of their holiday
