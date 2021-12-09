@@ -1,7 +1,7 @@
 
 #########################\# PowerShellScripts #\##################################
 #                                                                                #
-#                      Trying To Make Life Easier                                #
+#                      -Trying To Make Life Easier-                              #
 #                                                                                #
 ##################################################################################
  - Renaming&JoiningDomain : for PC's that haven't joined a domain yet.
