@@ -1,0 +1,5 @@
+Matricule,Nom usuel,Pr?nom,Lib poste,Lib emploi,UO principale,Situation,Date de naissance,cat,datedepart,CSVState
+0,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,test_obligatoire,M0
+R02525,Jack,P,,,,Sortie,9/20/1970,Interruption Involontaire,6/24/2020,
+R05025,Ben,L,,,,Actif,6/25/1985,Interruption Involontaire,2/6/2020,
+R02550,Rick,S,Charg? de Mission 1,Gestionnaire ,Direction de l'Audit et du Contr?le de Gestion,Actif,1/8/1986,,,
