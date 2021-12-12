@@ -14,7 +14,7 @@ $i++
 Write-Progress -Activity "Renaming Computers" -Status "In progress…" -PercentComplete ($i/$CompCount*100)
 ########
 $HardwareType = (Get-CimInstance -ClassName Win32_ComputerSystem -computername $Computer).PCSystemType # 1,3 & 2 for mobile
-$BSN = (Get-CimInstance -ClassName Win32_BIOS -computername BTEST0).SerialNumber  # gcim win32_bios -computername BTEST0 | select SerialNumber
+$BSN = (Get-CimInstance -ClassName Win32_BIOS -computername $Computer).SerialNumber  # gcim win32_bios -computername BTEST0 | select SerialNumber
 
 $Check = 0
 $NewName = ""
