@@ -19,7 +19,7 @@ if ( ($HardwareType -ilike "Desktop") -and ($BSN -notlike "INVALID") ) {
     
     # Copying the CSV located in the server to a local path
     $D1 = ($env:SystemDrive) + "\Base1.csv" 
-    Copy-Item -Path "****" -Destination $D   # CSV file needed with two headers, INVENTORY and SERIAL, also with Full path 
+    Copy-Item -Path "****" -Destination $D1   # CSV file needed with two headers, INVENTORY and SERIAL, also with Full path 
     $InvBase = Import-Csv "C:\Base1.csv" -Delimiter ";"    
 
     # Checking if it already been renamed after its own serial number's correspondant inventory value
