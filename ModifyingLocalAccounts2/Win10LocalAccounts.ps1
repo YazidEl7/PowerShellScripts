@@ -5,7 +5,7 @@ $i = 0
 Foreach ($Computer in $Win10Comp) {
 ########
 $i++
-Write-Progress -Activity "Modifying local accounts" -Status "In progress…" -PercentComplete ($i/$CompCount*100)
+Write-Progress -Activity "Modifying local accounts" -Status "In progressâ€¦" -PercentComplete ($i/$CompCount*100)
 ########
 $TestConnection = Test-Connection $Computer
         ########################## Available Computer ####################################################
@@ -35,7 +35,7 @@ $TestConnection = Test-Connection $Computer
                                 } # 1st foreach
                                 ######################################################
                                 # if the account doesn't exist, we gonna create it 
-                                if ( $Check = 0) {
+                                if ( $Check -eq 0) {
                                                                                New-LocalUser "win10-64bit" -Password $Pass
                                                                                Add-LocalGroupMember -Group "Administrators" -Member "win10-64bit"  
                                         
@@ -45,7 +45,7 @@ $TestConnection = Test-Connection $Computer
                                 } #3rd if
                                 ######################################################
                                 # After Creating the account
-                                if ( $Check = 1) {
+                                if ( $Check -eq 1) {
                                 foreach ($U in $LocalUsers) {
         
                                              if ( ($U -ilike "win10-64bit") -and ($Check2 -eq 1) ) {
