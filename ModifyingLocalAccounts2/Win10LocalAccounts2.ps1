@@ -8,7 +8,7 @@ $i = 0
 Foreach ($Computer in $Win10Comp) {
 ########
 $i++
-Write-Progress -Activity "Modifying local accounts" -Status "In progressÖ" -PercentComplete ($i/$CompCount*100)
+Write-Progress -Activity "Modifying local accounts" -Status "In progress‚Ä¶" -PercentComplete ($i/$CompCount*100)
 ########
 $TestConnection = Test-Connection $Computer
         ########################## Available Computer ####################################################
@@ -33,9 +33,9 @@ $TestConnection = Test-Connection $Computer
                                 ######################################################
                                 ######################################################
                                 # if the account doesn't exist, we gonna create it 
-                                if ( $Check = 0) { 
-                                                                               $objOu = [ADSI]îWinNT://$computer,computerì
-                                                                               $objUser = $objOU.Create(ìUserì, $Account)
+                                if ( $Check -eq 0) { 
+                                                                               $objOu = [ADSI]‚ÄùWinNT://$computer,computer‚Äú
+                                                                               $objUser = $objOU.Create(‚ÄúUser‚Äú, $Account)
                                                                                $objUser.setpassword($Pass)
                                                                                $objUser.SetInfo()
                                                                                #$user.CommitChanges()
@@ -52,7 +52,7 @@ $TestConnection = Test-Connection $Computer
                                 } 
                                 ######################################################
          
-         if ( $Check = 1) {
+         if ( $Check -eq 1) {
          ForEach($U in $LocalUsers){
 
              ##############################################
