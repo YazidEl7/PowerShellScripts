@@ -1,6 +1,6 @@
 $Win10Comp = @( (Get-ADComputer -Filter {OperatingSystem -like '*Windows 10*'} | where {$_.Enabled -eq $True} ).Name )
 $Account = "win10-64bit"
-$Pass= ConvertTo-SecureString -String "Pass1234" -AsPlainText -Force
+$Pass= "Pass1234"
 $Group = 'Administrators'
 $CompCount = ($Win10Comp).Count
 $i = 0
@@ -16,13 +16,13 @@ $TestConnection = Test-Connection $Computer
 {
         $Check = 0
         $Check2 = 1
-        $EnableUser = 512
+        #$EnableUser = 512
         $DisableUser = 2
 
         # (Get-CimInstance -Class Win32_OperatingSystem -computername BTEST0).OSArchitecture
         #searching for users
        ######################################################                                                         
-        $LocalUsers =  @( (Get-CimInstance -ClassName Win32_UserAccount -Filter "LocalAccount = TRUE" -computername $Computer) )
+        $LocalUsers =  @( (Get-CimInstance -ClassName Win32_UserAccount -Filter "LocalAccount = TRUE" -computername $Computer).Name )
                                 ######################################################
                                 # Testing the existence of win10 
                                 foreach ($User in $LocalUsers) {
@@ -58,14 +58,14 @@ $TestConnection = Test-Connection $Computer
              ##############################################
              if( ($Account -eq $U) -and ($Check2 -eq 1) ) 
                     {   
-                 $user = [adsi]"WinNT://$computer/$U"
+                 $user = [adsi]"WinNT://$computer/$U,user"
                  $user.SetPassword($Pass)
                  $user.SetInfo()
                      }
              ##############################################
              else {
 
-                 $user = [adsi]"WinNT://$computer/$U"
+                 $user = [adsi]"WinNT://$computer/$U,user"
                  $user.UserFlags=$DisableUser
                  $user.SetInfo()
   
