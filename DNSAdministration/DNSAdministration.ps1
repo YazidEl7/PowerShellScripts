@@ -32,7 +32,7 @@ Function DeleteRecord(){
 		[Parameter(Mandatory)]
 		[string]$HostNameP
 	)
-    Get-DnsServerResourceRecord -ComputerName $DCP -ZoneName $DomainP -Name $HostNameP | Remove-DNSServerResourceRecord –ZoneName $DomainP –ComputerName $HostNameP
+    Get-DnsServerResourceRecord -ComputerName $DCP -ZoneName $DomainP -Name $HostNameP | Remove-DNSServerResourceRecord â€“ZoneName $DomainP â€“ComputerName $HostNameP
 }
 Function UpdateRecord(){
 	param(
@@ -74,8 +74,8 @@ Function Search(){
 }
 ######################################################################################
 # Modify DC to your Domain Controller and Domain to the domain you intend to modify in.
-$DC = "DC01-W2K19"
-$Domain = "domdaman.intra"
+$DC = "DC1-W19"
+$Domain = "domain.private"
 
 Write-Host " 1 - Normal Mode you search the host and you UPDATE or DELETE" -ForegroundColor Magenta
 Write-Host " 2 - Advanced Mode you provide a CSV (Hostname, IP columns header required) File to do the above " -ForegroundColor Magenta
