@@ -1,0 +1,1 @@
+Use this script to get the full list of the Schema GUIDS
