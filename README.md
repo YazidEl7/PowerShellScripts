@@ -4,6 +4,7 @@
 #                          * PowerShell EDC *                                    #
 #                                                                                #
 ##################################################################################
+ - Schema GUIDs
  - DNSAdministration
  - CreatingNewUsrs : Bulk creation of users
  - Renaming&JoiningDomain : for PC's that haven't joined a domain yet.
