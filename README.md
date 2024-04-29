@@ -1,7 +1,7 @@
 
 #########################*# PowerShellScripts #*##################################
 #                                                                                #
-#                     * Trying To Make Life Easier *                             #
+#                          * PowerShell EDC *                                    #
 #                                                                                #
 ##################################################################################
  - Renaming&JoiningDomain : for PC's that haven't joined a domain yet.
