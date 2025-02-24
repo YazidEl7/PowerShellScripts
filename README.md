@@ -3,7 +3,7 @@ Useful PwerShell scripts for Active directory administrators
 
 #########################*# PowerShellScripts #*##################################
 #                                                                                #
-#                          * PowerShell EDC *                                    #
+                          * PowerShell EDC *                                    
 #                                                                                #
 ##################################################################################
  - Schema GUIDs
