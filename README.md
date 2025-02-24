@@ -1,9 +1,9 @@
 # PowerShell EDC
 Useful PwerShell scripts for Active directory administrators
 
-                        *# PowerShellScripts #*
+                        # PowerShellScripts #
 #                                                                                #
-                          * PowerShell EDC *                                    
+                           PowerShell EDC                                    
 #                                                                                #
 
  - Schema GUIDs
