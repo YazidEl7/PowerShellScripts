@@ -2,9 +2,6 @@
 Useful PwerShell scripts for Active directory administrators
 
 
-                           PowerShell EDC                                    
-#                                                                                #
-
  - Schema GUIDs
  - DNSAdministration
  - CreatingNewUsrs : Bulk creation of users
