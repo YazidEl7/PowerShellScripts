@@ -1,8 +1,7 @@
-# PowerShell EDC
+# PowerShell scripts EDC
 Useful PwerShell scripts for Active directory administrators
 
-                        # PowerShellScripts #
-#                                                                                #
+
                            PowerShell EDC                                    
 #                                                                                #
 
